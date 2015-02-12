@@ -86,9 +86,17 @@ function createTree () {
             if (this.age>=5 && this.age %5 ===0){
                this.growFruit(10);
             }
+},
+        pickFruit: function () {
+          return this.oranges.splice(0, this.oranges.length)
+
 
             
+
         }
+
+            
+        
             // increment the tree's age
             // i.e. this.age
 
@@ -112,13 +120,14 @@ tree.ageOneYear()
 console.log(tree.age)
 console.log(tree.height)
 console.log(tree.oranges)
-tree.oranges.forEach(function (o){
+
+
+basket = tree.pickFruit ()
+console.log(basket)
+
+basket.forEach(function (o){
 console.log(o.size)
 })
-
-
-
-
 
 
 
