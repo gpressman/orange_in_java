@@ -81,7 +81,7 @@ function createTree () {
             this.height +=1
             if (this.age == 70){
               this.isDead = true 
-              console.log( "alas the tree is dead") }
+               }
 
             if (this.age>=5 && this.age %5 ===0){
                this.growFruit(10);
@@ -92,6 +92,20 @@ function createTree () {
 
 
             
+
+        },
+
+        ageUntilDead: function () {
+
+            while  (!this.isDead) {
+                this.ageOneYear();
+                console.log(this.age); 
+                console.log(this.height)   
+                this.pickFruit(); 
+
+                
+            }
+            console.log( "alas the tree is dead")
 
         }
 
@@ -111,23 +125,7 @@ function createTree () {
 
 var tree = createTree();
 
-console.log(tree.age)
-tree.ageOneYear()
-tree.ageOneYear()
-tree.ageOneYear()
-tree.ageOneYear()
-tree.ageOneYear()
-console.log(tree.age)
-console.log(tree.height)
-console.log(tree.oranges)
-
-
-basket = tree.pickFruit ()
-console.log(basket)
-
-basket.forEach(function (o){
-console.log(o.size)
-})
+tree.ageUntilDead();
 
 
 
